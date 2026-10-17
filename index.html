@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>The Wealth Formation Pipeline™ — Rehana Mohamed</title>
+<meta name="description" content="Rehana Mohamed’s three-part ecosystem — Satin Gloves, NIACIN Educators and Mula Momma — equips founders, families and the next generation to create, understand and sustain wealth." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #0d0d0d;
+    --cream: #f5f0e8;
+    --gold: #c9a84c;
+    --gold-light: #e8c96f;
+    --plum: #3b1f2b;
+    --navy: #0e1a2b;
+    --terracotta: #b85c38;
+    --muted: #7a7065;
+    --rule: rgba(201,168,76,0.25);
+    color-scheme: dark;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
+
+  body {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'DM Sans', Georgia, serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+  /* ── NOISE TEXTURE ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: 0.4;
+  }
+
+  section, header, footer { position: relative; z-index: 1; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: calc(1.5rem + env(safe-area-inset-top, 0px)) 3rem 1.5rem;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    background: rgba(13,13,13,0.85);
+    backdrop-filter: blur(12px);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem; letter-spacing: 0.15em;
+    color: var(--gold); text-transform: uppercase;
+    text-decoration: none;
+  }
+  .nav-cta {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink); background: var(--gold);
+    padding: 0.6rem 1.4rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', Georgia, serif; font-weight: 500;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 8rem 3rem 5rem;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,168,76,0.07) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 80% at 10% 80%, rgba(59,31,43,0.5) 0%, transparent 60%);
+  }
+  .hero-rule {
+    position: absolute; top: 0; right: 10%; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--rule), transparent);
+  }
+  .hero-eyebrow {
+    font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; display: block; width: 2rem; height: 1px; background: var(--gold);
+  }
+  .hero-headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(3.5rem, 8vw, 7.5rem);
+    font-weight: 300; line-height: 0.95;
+    max-width: 14ch; margin-bottom: 2.5rem;
+  }
+  .hero-headline em {
+    font-style: italic; color: var(--gold);
+  }
+  .hero-sub {
+    font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+    line-height: 1.7; max-width: 55ch;
+    color: rgba(245,240,232,0.65); margin-bottom: 3rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    background: var(--gold); color: var(--ink);
+    padding: 1rem 2.2rem; border: none; cursor: pointer;
+    font-family: 'DM Sans', Georgia, serif; font-weight: 500;
+    transition: background 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-ghost {
+    font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
+    background: transparent; color: var(--cream);
+    padding: 1rem 2.2rem; border: 1px solid rgba(245,240,232,0.25); cursor: pointer;
+    font-family: 'DM Sans', Georgia, serif; font-weight: 400;
+    transition: border-color 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-scroll {
+    position: absolute; right: 3rem; bottom: 3rem;
+    writing-mode: vertical-rl; text-orientation: mixed;
+    font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-scroll::after {
+    content: ''; display: block; width: 1px; height: 3rem; background: var(--muted);
+  }
+
+  /* ── PROBLEM ── */
+  .problem {
+    padding: 8rem 3rem;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 6rem;
+    align-items: center; border-bottom: 1px solid var(--rule);
+    max-width: 1400px; margin: 0 auto;
+  }
+  .problem-label {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 2rem;
+  }
+  .problem-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 400; line-height: 1.1; margin-bottom: 2rem;
+  }
+  .problem-heading em { font-style: italic; color: var(--gold); }
+  .problem-body {
+    font-size: 1rem; line-height: 1.8;
+    color: rgba(245,240,232,0.65); margin-bottom: 2.5rem;
+  }
+  .pipeline-breaks {
+    display: flex; flex-direction: column; gap: 1.2rem;
+  }
+  .break-item {
+    display: flex; align-items: flex-start; gap: 1.2rem;
+    padding: 1.2rem 1.5rem;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(201,168,76,0.03);
+  }
+  .break-icon {
+    width: 2rem; height: 2rem; flex-shrink: 0;
+    border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem; color: var(--gold); margin-top: 0.1rem;
+  }
+  .break-text strong {
+    display: block; font-size: 0.85rem; letter-spacing: 0.05em;
+    margin-bottom: 0.3rem; color: var(--cream);
+  }
+  .break-text span {
+    font-size: 0.82rem; color: var(--muted); line-height: 1.5;
+  }
+
+  /* ── PIPELINE DIAGRAM ── */
+  .pipeline-section {
+    padding: 8rem 3rem;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .pipeline-section-inner { max-width: 1400px; margin: 0 auto; }
+  .section-label {
+    font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px; max-width: 4rem; background: var(--rule);
+  }
+  .section-heading {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 300; line-height: 1.05; margin-bottom: 1.5rem;
+  }
+  .section-sub {
+    font-size: 1rem; line-height: 1.7;
+    color: rgba(245,240,232,0.55); max-width: 60ch; margin-bottom: 5rem;
+  }
+
+  .pipeline-diagram {
+    display: grid; grid-template-columns: 1fr auto 1fr auto 1fr;
+    gap: 0; align-items: stretch;
+    position: relative;
+  }
+  .pipeline-stage {
+    padding: 3rem 2.5rem;
+    border: 1px solid rgba(201,168,76,0.2);
+    position: relative; overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .pipeline-stage:hover { border-color: var(--gold); }
+  .pipeline-stage::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.05) 0%, transparent 60%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .pipeline-stage:hover::before { opacity: 1; }
+  .stage-number {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 5rem; line-height: 1;
+    color: rgba(201,168,76,0.12); position: absolute; top: 1rem; right: 1.5rem;
+  }
+  .stage-brand {
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    position: relative; z-index: 1;
+  }
+  .stage-brand a {
+    color: inherit; text-decoration: none;
+    border-bottom: 1px solid rgba(201,168,76,0.4);
+    padding-bottom: 0.15rem; transition: border-color 0.2s;
+  }
+  .stage-brand a:hover { border-color: var(--gold); }
+  .stage-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem; font-weight: 600; line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+  .stage-subtitle {
+    font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 1.5rem;
+  }
+  .stage-desc {
+    font-size: 0.88rem; line-height: 1.7;
+    color: rgba(245,240,232,0.6); margin-bottom: 2rem;
+  }
+  .stage-book {
+    display: flex; align-items: center; gap: 0.8rem;
+    padding-top: 1.5rem; border-top: 1px solid var(--rule);
+  }
+  .book-badge {
+    width: 2.2rem; height: 2.8rem; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 500; text-align: center;
+    line-height: 1.2;
+  }
+  .badge-navy { background: var(--navy); color: var(--gold-light); }
+  .badge-plum { background: var(--plum); color: #d4a5c9; }
+  .badge-terracotta { background: #2a1008; color: var(--terracotta); border: 1px solid var(--terracotta); }
+  .book-info small {
+    display: block; font-size: 0.6rem; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 0.2rem;
+  }
+  .book-info strong {
+    font-size: 0.82rem; font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 600; font-style: italic;
+  }
+  .pipeline-arrow {
+    display: flex; align-items: center; justify-content: center;
+    padding: 0 1rem;
+    color: var(--gold); font-size: 1.2rem; opacity: 0.5;
+  }
+
+  /* stage accent colors */
+  .stage-creation { border-top: 3px solid var(--navy); }
+  .stage-clarity  { border-top: 3px solid var(--gold); }
+  .stage-management { border-top: 3px solid var(--terracotta); }
+
+  .pipeline-result {
+    margin-top: 4rem;
+    padding: 2.5rem 3rem;
+    border: 1px solid rgba(201,168,76,0.3);
+    background: rgba(201,168,76,0.04);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 2rem; flex-wrap: wrap;
+  }
+  .result-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 300; font-style: italic;
+  }
+  .result-text strong { font-style: normal; font-weight: 600; color: var(--gold); }
+  .result-arrow {
+    font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); white-space: nowrap;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .result-arrow::after {
+    content: '→'; font-size: 1rem;
+  }
+
+  /* ── BRANDS ── */
+  .brands-section {
+    padding: 8rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .brands-section-inner { max-width: 1400px; margin: 0 auto; }
+  .brands-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px;
+    margin-top: 4rem;
+  }
+  .brand-card {
+    padding: 3.5rem 2.5rem;
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+  }
+  .brand-niacin { background: #0e1118; }
+  .brand-mula { background: #1a0f14; }
+  .brand-satin { background: #080e17; }
+
+  .brand-card::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  }
+  .brand-niacin::after { background: linear-gradient(90deg, var(--gold), transparent); }
+  .brand-mula::after { background: linear-gradient(90deg, #c084a0, transparent); }
+  .brand-satin::after { background: linear-gradient(90deg, #4a7ab5, transparent); }
+
+  .brand-tag {
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    margin-bottom: 2rem; display: flex; align-items: center; gap: 0.8rem;
+  }
+  .brand-tag::before {
+    content: ''; display: block; width: 1.5rem; height: 1px;
+  }
+  .tag-niacin { color: var(--gold); }
+  .tag-niacin::before { background: var(--gold); }
+  .tag-mula { color: #c084a0; }
+  .tag-mula::before { background: #c084a0; }
+  .tag-satin { color: #4a7ab5; }
+  .tag-satin::before { background: #4a7ab5; }
+
+  .brand-name {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2rem; font-weight: 600; line-height: 1.1; margin-bottom: 0.5rem;
+  }
+  .brand-tagline {
+    font-size: 0.75rem; letter-spacing: 0.08em;
+    color: var(--muted); margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+  .brand-desc {
+    font-size: 0.88rem; line-height: 1.75;
+    color: rgba(245,240,232,0.55); margin-bottom: 2rem;
+    flex: 1;
+  }
+  .brand-audience {
+    font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 0.5rem 0; border-top: 1px solid rgba(255,255,255,0.06);
+    color: var(--muted);
+  }
+  .brand-audience strong { color: var(--cream); font-weight: 400; }
+  .brand-link {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-top: 1.5rem; align-self: flex-start;
+    font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase;
+    text-decoration: none; font-weight: 500;
+    padding: 0.75rem 1.2rem;
+    border: 1px solid currentColor;
+    transition: background 0.2s, color 0.2s;
+  }
+  .brand-link::after { content: '→'; }
+  .link-niacin { color: var(--gold); }
+  .link-niacin:hover { background: var(--gold); color: var(--ink); }
+  .link-mula { color: #c084a0; }
+  .link-mula:hover { background: #c084a0; color: var(--ink); }
+  .link-satin { color: #4a7ab5; }
+  .link-satin:hover { background: #4a7ab5; color: var(--ink); }
+
+  /* ── BOOKS ── */
+  .books-section {
+    padding: 8rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .books-section-inner { max-width: 1400px; margin: 0 auto; }
+  .books-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem;
+    margin-top: 5rem;
+  }
+  .book-card {
+    display: flex; flex-direction: column;
+  }
+  .book-cover {
+    height: 20rem;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 2rem; margin-bottom: 2rem; position: relative; overflow: hidden;
+  }
+  .book-cover-bc { background: linear-gradient(135deg, #0a1020 0%, #1a2744 60%, #0e1a2b 100%); }
+  .book-cover-mm { background: linear-gradient(135deg, #1a0818 0%, #3b1f2b 60%, #2a0f1e 100%); }
+  .book-cover-sg { background: linear-gradient(135deg, #0a0808 0%, #2a1008 60%, #1a0a04 100%); }
+
+  .book-cover::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.012) 2px,
+      rgba(255,255,255,0.012) 4px
+    );
+  }
+  .book-cover-spine {
+    position: absolute; top: 0; left: 0; bottom: 0; width: 5px;
+  }
+  .spine-bc { background: var(--gold); }
+  .spine-mm { background: #c084a0; }
+  .spine-sg { background: var(--terracotta); }
+
+  .book-cover-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.8rem; font-weight: 700; line-height: 1.1;
+    position: relative; z-index: 1;
+  }
+  .book-cover-sub {
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(245,240,232,0.5); margin-top: 0.5rem;
+    position: relative; z-index: 1;
+  }
+  .book-pipeline-tag {
+    font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.8rem;
+  }
+  .book-title-text {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.4rem; font-weight: 600; margin-bottom: 0.5rem;
+  }
+  .book-desc {
+    font-size: 0.85rem; line-height: 1.7;
+    color: rgba(245,240,232,0.55); flex: 1;
+  }
+
+  /* ── ORGANIZATIONS ── */
+  .orgs-section {
+    padding: 8rem 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+  .orgs-inner { max-width: 1400px; margin: 0 auto; }
+  .orgs-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    margin-top: 4rem;
+  }
+  .org-card {
+    padding: 3rem;
+    border: 1px solid rgba(201,168,76,0.15);
+    position: relative;
+  }
+  .org-card::before {
+    content: '';
+    position: absolute; top: -1px; left: 0; width: 4rem; height: 2px;
+    background: var(--gold);
+  }
+  .org-number {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    font-size: 4rem; color: rgba(201,168,76,0.1); line-height: 1;
+    margin-bottom: 1.5rem;
+  }
+  .org-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1.6rem; font-weight: 600; margin-bottom: 1rem;
+  }
+  .org-desc {
+    font-size: 0.88rem; line-height: 1.7;
+    color: rgba(245,240,232,0.55);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding: 10rem 3rem;
+    text-align: center; overflow: hidden; position: relative;
+  }
+  .cta-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%);
+  }
+  .cta-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+  .cta-label {
+    font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 2rem;
+  }
+  .cta-headline {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 300; line-height: 1.05; margin-bottom: 2rem;
+  }
+  .cta-headline em { font-style: italic; color: var(--gold); }
+  .cta-body {
+    font-size: 1rem; line-height: 1.7;
+    color: rgba(245,240,232,0.55); margin-bottom: 3.5rem; max-width: 50ch; margin-left: auto; margin-right: auto;
+  }
+  .cta-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 3rem 3rem calc(3rem + env(safe-area-inset-bottom, 0px));
+    border-top: 1px solid var(--rule);
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 2rem; flex-wrap: wrap;
+    max-width: 100%;
+  }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 1rem; letter-spacing: 0.15em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .footer-brands {
+    display: flex; gap: 2.5rem; flex-wrap: wrap;
+    font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .footer-brands a { color: inherit; text-decoration: none; transition: color 0.2s; }
+  .footer-brands a:hover { color: var(--gold); }
+  .footer-copy {
+    font-size: 0.7rem; color: rgba(122,112,101,0.5);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.8s ease 0.2s both; }
+  .hero-headline { animation: fadeUp 0.8s ease 0.4s both; }
+  .hero-sub { animation: fadeUp 0.8s ease 0.6s both; }
+  .hero-actions { animation: fadeUp 0.8s ease 0.8s both; }
+
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .hero-eyebrow, .hero-headline, .hero-sub, .hero-actions { animation: none; }
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: calc(1.2rem + env(safe-area-inset-top, 0px)) 1.5rem 1.2rem; }
+    .hero { padding: 7rem 1.5rem 4rem; }
+    .hero-scroll { display: none; }
+    .problem { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+    .pipeline-diagram { grid-template-columns: 1fr; }
+    .pipeline-arrow { display: none; }
+    .pipeline-section { padding: 5rem 1.5rem; }
+    .brands-grid { grid-template-columns: 1fr; gap: 2px; }
+    .books-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .orgs-grid { grid-template-columns: 1fr; }
+    .brands-section, .books-section, .orgs-section { padding: 5rem 1.5rem; }
+    .cta-section { padding: 6rem 1.5rem; }
+    footer { flex-direction: column; align-items: flex-start; padding: 2rem 1.5rem calc(2rem + env(safe-area-inset-bottom, 0px)); }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Rehana Mohamed</a>
+  <a href="#connect" class="nav-cta">Book Rehana</a>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-rule"></div>
+  <p class="hero-eyebrow">The Wealth Formation Pipeline™</p>
+  <h1 class="hero-headline">
+    One System.<br><em>Every</em> Stage<br>of Wealth.
+  </h1>
+  <p class="hero-sub">
+    Most people aren’t failing at money—they’re failing at the infrastructure behind it. Rehana Mohamed has built a three-part ecosystem that equips founders, families, and the next generation with the structure to create, understand, and sustain wealth.
+  </p>
+  <div class="hero-actions">
+    <a href="#pipeline" class="btn-primary">See the Framework</a>
+    <a href="#books" class="btn-ghost">Explore the Books</a>
+  </div>
+  <div class="hero-scroll">Scroll</div>
+</header>
+
+<!-- PROBLEM -->
+<section style="background: var(--ink); padding: 0;">
+  <div class="problem reveal">
+    <div>
+      <p class="problem-label">The Real Diagnosis</p>
+      <h2 class="problem-heading">You don’t have a money problem.<br>You have a <em>broken pipeline.</em></h2>
+      <p class="problem-body">
+        Money isn’t lost randomly. It breaks down somewhere specific—in how it’s created, in how it’s understood, or in how it’s managed. Until that break is identified and repaired, no amount of motivation changes the outcome.
+      </p>
+      <p class="problem-body">
+        Rehana’s work doesn’t start with numbers. It starts with the context, behavior, and structure around those numbers—because that’s where the real problem lives.
+      </p>
+    </div>
+    <div class="pipeline-breaks">
+      <div class="break-item">
+        <div class="break-icon">01</div>
+        <div class="break-text">
+          <strong>Creation is inconsistent</strong>
+          <span>Income is either trapped in a job, unreliable in a business, or never taught at all. The pipeline never gets filled.</span>
+        </div>
+      </div>
+      <div class="break-item">
+        <div class="break-icon">02</div>
+        <div class="break-text">
+          <strong>Clarity is borrowed</strong>
+          <span>Decisions get made based on other people’s frameworks. Without language for your own financial reality, you can’t lead it.</span>
+        </div>
+      </div>
+      <div class="break-item">
+        <div class="break-icon">03</div>
+        <div class="break-text">
+          <strong>Management has no structure</strong>
+          <span>Money comes in and leaves without systems. What isn’t structured can’t compound—it just circulates and disappears.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PIPELINE -->
+<section id="pipeline" class="pipeline-section">
+  <div class="pipeline-section-inner">
+    <p class="section-label reveal">The Framework</p>
+    <h2 class="section-heading reveal">The Wealth Formation<br>Pipeline™</h2>
+    <p class="section-sub reveal">
+      Three stages. Three audiences. One through-line. When all three are aligned, wealth doesn’t just grow—it compounds across generations.
+    </p>
+
+    <div class="pipeline-diagram reveal">
+      <!-- STAGE 1 -->
+      <div class="pipeline-stage stage-creation">
+        <span class="stage-number">01</span>
+        <p class="stage-brand"><a href="https://satingloves.org" target="_blank" rel="noopener">Satin Gloves</a></p>
+        <h3 class="stage-name">Creation</h3>
+        <p class="stage-subtitle">Execution Layer</p>
+        <p class="stage-desc">
+          Wealth must first be created. This stage is about execution literacy—teaching teens and young adults to turn ideas, discipline, and ambition into consistent income and economic identity before bad habits form.
+        </p>
+        <div class="stage-book">
+          <div class="book-badge badge-navy">SG</div>
+          <div class="book-info">
+            <small>Featured Book</small>
+            <strong>Satin Gloves</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipeline-arrow">&#x2192;</div>
+
+      <!-- STAGE 2 -->
+      <div class="pipeline-stage stage-clarity">
+        <span class="stage-number">02</span>
+        <p class="stage-brand"><a href="https://niacinconsulting.com" target="_blank" rel="noopener">NIACIN Educators</a></p>
+        <h3 class="stage-name">Clarity</h3>
+        <p class="stage-subtitle">Decision Layer</p>
+        <p class="stage-desc">
+          Income alone isn’t enough. Founders and business owners need to understand their numbers well enough to make decisions from them—not around them. This stage replaces borrowed confidence with financial decision architecture.
+        </p>
+        <div class="stage-book">
+          <div class="book-badge badge-navy">BC</div>
+          <div class="book-info">
+            <small>Featured Book</small>
+            <strong>Borrowed Clarity</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="pipeline-arrow">&#x2192;</div>
+
+      <!-- STAGE 3 -->
+      <div class="pipeline-stage stage-management">
+        <span class="stage-number">03</span>
+        <p class="stage-brand"><a href="https://mulamomma.org" target="_blank" rel="noopener">Mula Momma</a></p>
+        <h3 class="stage-name">Management</h3>
+        <p class="stage-subtitle">Household Systems Layer</p>
+        <p class="stage-desc">
+          The pipeline breaks at home if there are no systems. Blended families and households need operational infrastructure for money—shared language, clear accountability, and frameworks that outlast the chaos of daily life.
+        </p>
+        <div class="stage-book">
+          <div class="book-badge badge-plum">MM</div>
+          <div class="book-info">
+            <small>Featured Book</small>
+            <strong>Mula Momma</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pipeline-result reveal">
+      <p class="result-text">When one stage breaks, <strong>wealth breaks.</strong><br>When all three align, <strong>wealth compounds.</strong></p>
+      <span class="result-arrow">Complete System</span>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands-section">
+  <div class="brands-section-inner">
+    <p class="section-label reveal">Three Brands. One Ecosystem.</p>
+    <h2 class="section-heading reveal">Each brand serves<br>a distinct stage.</h2>
+    <p class="section-sub reveal">
+      They stand alone. They work together. That’s the architecture.
+    </p>
+    <div class="brands-grid">
+      <div class="brand-card brand-niacin reveal">
+        <p class="brand-tag tag-niacin">NIACIN Educators</p>
+        <h3 class="brand-name">Financial Decision<br>Architecture</h3>
+        <p class="brand-tagline">For Founders &amp; Business Owners</p>
+        <p class="brand-desc">
+          NIACIN exists for the founder who has revenue but no clarity—who is making decisions based on incomplete information or other people’s frameworks. This brand delivers the financial visibility and decision confidence that turns owners into CEOs.
+        </p>
+        <p class="brand-audience">Pipeline Stage: <strong>Clarity</strong></p>
+        <a href="https://niacinconsulting.com" target="_blank" rel="noopener" class="brand-link link-niacin">Visit niacinconsulting.com</a>
+      </div>
+      <div class="brand-card brand-mula reveal">
+        <p class="brand-tag tag-mula">Mula Momma</p>
+        <h3 class="brand-name">Household Systems<br>Leadership</h3>
+        <p class="brand-tagline">For Blended Families</p>
+        <p class="brand-desc">
+          Mula Momma addresses the household as an operating unit. For blended families navigating the financial complexity of combined lives, this brand delivers the systems, language, and structure to make money work at home—not just in theory.
+        </p>
+        <p class="brand-audience">Pipeline Stage: <strong>Management</strong></p>
+        <a href="https://mulamomma.org" target="_blank" rel="noopener" class="brand-link link-mula">Visit mulamomma.org</a>
+      </div>
+      <div class="brand-card brand-satin reveal">
+        <p class="brand-tag tag-satin">Satin Gloves</p>
+        <h3 class="brand-name">Execution Literacy<br>for the Next Gen</h3>
+        <p class="brand-tagline">For Teens &amp; Young Adults (16–21)</p>
+        <p class="brand-desc">
+          Satin Gloves is the front door of the pipeline. Before habits calcify and before first jobs become ceilings, this brand builds the execution skills, financial identity, and entrepreneurial mindset that make wealth creation possible from the start.
+        </p>
+        <p class="brand-audience">Pipeline Stage: <strong>Creation</strong></p>
+        <a href="https://satingloves.org" target="_blank" rel="noopener" class="brand-link link-satin">Visit satingloves.org</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section id="books" class="books-section">
+  <div class="books-section-inner">
+    <p class="section-label reveal">The IP System</p>
+    <h2 class="section-heading reveal">Three books.<br>One complete system.</h2>
+    <p class="section-sub reveal">
+      Each book represents a critical stage in the pipeline. Together, they form a body of work unlike anything else in the financial space.
+    </p>
+    <div class="books-grid">
+      <div class="book-card reveal">
+        <div class="book-cover book-cover-sg">
+          <div class="book-cover-spine spine-sg"></div>
+          <p class="book-cover-title">Satin Gloves</p>
+          <p class="book-cover-sub">Execution Literacy for the Next Generation</p>
+        </div>
+        <p class="book-pipeline-tag">Pipeline: Creation Stage</p>
+        <h3 class="book-title-text">Satin Gloves</h3>
+        <p class="book-desc">
+          The field guide for teens and young adults ready to build economic identity early. Covers execution discipline, turning ideas into income, and developing the financial habits that compound over a lifetime—before the world teaches them the wrong ones.
+        </p>
+      </div>
+      <div class="book-card reveal">
+        <div class="book-cover book-cover-bc">
+          <div class="book-cover-spine spine-bc"></div>
+          <p class="book-cover-title">Borrowed Clarity</p>
+          <p class="book-cover-sub">A Financial Decision Architecture for Founders</p>
+        </div>
+        <p class="book-pipeline-tag">Pipeline: Clarity Stage</p>
+        <h3 class="book-title-text">Borrowed Clarity</h3>
+        <p class="book-desc">
+          The defining work of the NIACIN brand. Written for the founder operating with a CFO’s numbers but a non-CFO’s context, this book replaces borrowed confidence with a framework for reading, interpreting, and acting on your financial reality.
+        </p>
+      </div>
+      <div class="book-card reveal">
+        <div class="book-cover book-cover-mm">
+          <div class="book-cover-spine spine-mm"></div>
+          <p class="book-cover-title">Mula Momma</p>
+          <p class="book-cover-sub">The Household Systems Method™ for Blended Families</p>
+        </div>
+        <p class="book-pipeline-tag">Pipeline: Management Stage</p>
+        <h3 class="book-title-text">Mula Momma</h3>
+        <p class="book-desc">
+          The operational manual for the blended household. Covers the Household Systems Method™, money conversations in complex family structures, shared accountability frameworks, and building a home that functions like a well-run organization.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORGANIZATIONS -->
+<section class="orgs-section">
+  <div class="orgs-inner">
+    <p class="section-label reveal">For Organizations</p>
+    <h2 class="section-heading reveal">Ready to think<br>long-term?</h2>
+    <p class="section-sub reveal">
+      Rehana’s work doesn’t stop at individual transformation. She partners with organizations, schools, and communities to build complete wealth pipelines—equipping people at every stage.
+    </p>
+    <div class="orgs-grid">
+      <div class="org-card reveal">
+        <div class="org-number">01</div>
+        <h3 class="org-title">Corporate &amp; Leadership Partnerships</h3>
+        <p class="org-desc">
+          Organizations that invest in their people’s financial decision-making see it reflected in performance, retention, and leadership quality. Rehana brings the Wealth Formation Pipeline™ framework into corporate training, keynotes, and executive workshops—targeting the clarity and management layers with precision.
+        </p>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-number">02</div>
+        <h3 class="org-title">Schools, Districts &amp; Youth Programs</h3>
+        <p class="org-desc">
+          The creation stage of the pipeline is where institutions can have the longest-lasting impact. Through the Satin Gloves curriculum and keynotes, Rehana equips students before habits form—delivering execution literacy programs built for schools, youth organizations, and after-school initiatives.
+        </p>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-number">03</div>
+        <h3 class="org-title">Community Organizations &amp; Nonprofits</h3>
+        <p class="org-desc">
+          Generational wealth doesn’t happen in isolation—it happens in communities. Rehana works with nonprofits and community organizations to bring household systems literacy and financial decision architecture to the families and founders who need it most.
+        </p>
+      </div>
+      <div class="org-card reveal">
+        <div class="org-number">04</div>
+        <h3 class="org-title">Curriculum Licensing</h3>
+        <p class="org-desc">
+          The Wealth Formation Pipeline™ framework, the Household Systems Method™, and the NIACIN Financial Clarity Framework™ are available for institutional licensing. Organizations looking to embed structured financial education across their programming can inquire about curriculum partnerships.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="connect" class="cta-section">
+  <div class="cta-bg"></div>
+  <div class="cta-inner">
+    <p class="cta-label reveal">Work With Rehana</p>
+    <h2 class="cta-headline reveal">Don’t just inspire<br>your audience.<br><em>Equip their entire pipeline.</em></h2>
+    <p class="cta-body reveal">
+      Whether you’re booking a keynote, exploring a curriculum partnership, or bringing the Wealth Formation Pipeline™ into your organization—the conversation starts here.
+    </p>
+    <div class="cta-buttons reveal">
+      <a href="mailto:rehana@rehanaspeaks.com?subject=Speaking%20inquiry" class="btn-primary">Book a Speaking Engagement</a>
+      <a href="mailto:rehana@rehanaspeaks.com?subject=Partnership%20inquiry" class="btn-ghost">Explore Partnerships</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-logo">Rehana Mohamed</p>
+  <div class="footer-brands">
+    <a href="https://niacinconsulting.com" target="_blank" rel="noopener">NIACIN Educators</a>
+    <a href="https://mulamomma.org" target="_blank" rel="noopener">Mula Momma</a>
+    <a href="https://satingloves.org" target="_blank" rel="noopener">Satin Gloves</a>
+  </div>
+  <p class="footer-copy">© 2026 Rehana Mohamed. Wealth Formation Pipeline™ All rights reserved.</p>
+</footer>
+
+<script>
+  // Intersection Observer for reveal animations
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // stagger children of grids
+        const delay = entry.target.closest('.pipeline-diagram, .brands-grid, .books-grid, .orgs-grid')
+          ? Array.from(entry.target.parentElement.children).indexOf(entry.target) * 120
+          : 0;
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
